@@ -26,5 +26,5 @@ Enum.each(0..200, fn(_) ->
     especialidades: Enum.sort(Enum.take_random(especialidades, Enum.random(0..8))),
     salario: (Enum.random(50000..1000000) / 100)
   }
-  timer.sleep(100)
+  Process.sleep(100)
 end)
