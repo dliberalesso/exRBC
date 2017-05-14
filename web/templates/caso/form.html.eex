@@ -1,0 +1,48 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :universidade, class: "control-label" %>
+    <%= text_input f, :universidade, class: "form-control" %>
+    <%= error_tag f, :universidade %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :graduacao, class: "control-label" %>
+    <%= select f, :graduacao, ["Nível Médio": 1, "Bacharel": 2, "Mestre": 3, "Doutor": 4, "PhD": 5], class: "form-control" %>
+    <%= error_tag f, :graduacao %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :tempo_exp, class: "control-label" %>
+    <%= number_input f, :tempo_exp, class: "form-control" %>
+    <%= error_tag f, :tempo_exp %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :tempo_total, class: "control-label" %>
+    <%= number_input f, :tempo_total, class: "form-control" %>
+    <%= error_tag f, :tempo_total %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :especialidades, class: "control-label" %>
+    <%= array_input f, :especialidades %>
+    <%= array_add_button f, :especialidades %>
+    <%= error_tag f, :especialidades %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :salario, class: "control-label" %>
+    <%= number_input f, :salario, class: "form-control" %>
+    <%= error_tag f, :salario %>
+  </div>
+
+  <div class="form-group pull-right">
+    <%= submit "Salvar", class: "btn btn-primary" %>
+  </div>
+<% end %>

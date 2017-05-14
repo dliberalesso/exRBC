@@ -1,0 +1,38 @@
+<h2>Show caso</h2>
+
+<ul>
+
+  <li>
+    <strong>Universidade:</strong>
+    <%= @caso.universidade %>
+  </li>
+
+  <li>
+    <strong>Graduacao:</strong>
+    <%= @caso.graduacao %>
+  </li>
+
+  <li>
+    <strong>Tempo exp:</strong>
+    <%= @caso.tempo_exp %>
+  </li>
+
+  <li>
+    <strong>Tempo total:</strong>
+    <%= @caso.tempo_total %>
+  </li>
+
+  <li>
+    <strong>Especialidades:</strong>
+    <%= @caso.especialidades %>
+  </li>
+
+  <li>
+    <strong>Salario:</strong>
+    <%= @caso.salario %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: caso_path(@conn, :edit, @caso) %>
+<%= link "Back", to: caso_path(@conn, :index) %>

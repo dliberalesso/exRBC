@@ -1,0 +1,43 @@
+<h2>Casos salvos</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Universidade</th>
+      <th>Graduação</th>
+      <th>Experiência</th>
+      <th>Total</th>
+      <th>Especialidades</th>
+      <th>Salário</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for caso <- @casos do %>
+      <tr>
+        <td><%= caso.universidade %></td>
+        <td>
+          <%= case caso.graduacao do
+            1 -> "Nível Médio"
+            2 -> "Bacharel"
+            3 -> "Mestre"
+            4 -> "Doutor"
+            5 -> "PhD"
+          end %>
+        </td>
+        <td><%= caso.tempo_exp %> ano(s)</td>
+        <td><%= caso.tempo_total %> ano(s)</td>
+        <td><%= if caso.especialidades == nil, do: '', else: Enum.join(caso.especialidades, ", ")%></td>
+        <td>R$ <%= :erlang.float_to_binary(caso.salario, decimals: 2) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="row marketing">
+  <nav role="navigation">
+    <ul class="nav nav-pills">
+      <li class="pull-left"><a href="/query">Nova query</a></li>
+      <li class="pull-right"><%= link "Novo caso", to: caso_path(@conn, :new) %></li>
+    </ul>
+  </nav>
+</div>

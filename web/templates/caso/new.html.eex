@@ -1,0 +1,4 @@
+<h2>New caso</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: caso_path(@conn, :create) %>

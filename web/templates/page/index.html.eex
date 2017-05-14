@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <h2><%= gettext "Bem vindo ao ExRBC!" %></h2>
+  <p class="lead">Um sistema de Raciocínio Baseado em Casos que<br>
+    estima o valor do salário de um programador.</p>
+</div>
+
+<div class="row marketing">
+  <nav role="navigation">
+    <ul class="nav nav-pills">
+      <li class="pull-left"><a href="/query">Nova query</a></li>
+      <li class="pull-right"><a href="/casos">Casos salvos</a></li>
+    </ul>
+  </nav>
+</div>
