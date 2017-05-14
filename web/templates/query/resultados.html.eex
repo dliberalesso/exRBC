@@ -34,4 +34,4 @@
 </table>
 
 <%= render "new.html", changeset: @changeset,
-                        action: caso_path(@conn, :new) %>
+                        action: caso_path(@conn, :create) %>
